@@ -2,15 +2,17 @@
 
 from os.path import isdir
 
-allowed = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w')
-forbidden = 'ij' 
+allowed = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
+#forbidden = 'ij' 
 
 def check(word):
+	if len(word) < 4 or len(word) > 8:
+		return False
 	for char in word:
 		if char not in allowed:
 			return False
-	if forbidden in word:
-		return False
+#	if forbidden in word:
+#		return False
 	return True
 
 
