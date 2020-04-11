@@ -18,6 +18,6 @@ cd ..
 if [ -e correct-words-with-frequency.tsv ]; then
 	rm -f correct-words-with-frequency.tsv
 fi
-scp -q zaph:database-tools/correct-	words-with-frequency.tsv .
+scp -q zaph:database-tools/correct-words-with-frequency.tsv .
 
 cd ../tools
