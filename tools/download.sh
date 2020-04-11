@@ -15,9 +15,9 @@ cd bips-master
 rm -rf $(ls|grep -v 0039) .travis.yml
 cd ..
 
-if [ -e correct-words-with-frequency.tsv ]; then
-	rm -f correct-words-with-frequency.tsv
+if [ -e words-with-frequency.tsv ]; then
+	rm -f words-with-frequency.tsv
 fi
-scp -q zaph:database-tools/correct-words-with-frequency.tsv .
+scp -q zaph:database-tools/words-with-frequency.tsv .
 
 cd ../tools

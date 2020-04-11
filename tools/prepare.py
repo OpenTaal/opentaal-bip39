@@ -2,11 +2,13 @@
 
 from os.path import isdir
 
-allowed = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
+# also hyphen and space extra for ambiguity analysis
+allowed = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '-', ' ')
 #forbidden = 'ij' 
 
 def check(word):
-	if len(word) < 4 or len(word) > 8:
+	# 4 and 8, but two extra for ambiguity analysis e.g. "jou" vs. "jouw"
+	if len(word) < 2 or len(word) > 10:
 		return False
 	for char in word:
 		if char not in allowed:
@@ -23,7 +25,7 @@ if not isdir('../downloads/bips-master'):
 out = open('../downloads/word-frequency.tsv', 'w')
 total_in = 0
 total_out = 0
-for line in open('../downloads/correct-words-with-frequency.tsv'):
+for line in open('../downloads/words-with-frequency.tsv'):
 	total_in += 1
 	freq, word = line[:-1].split('\t')
 	if check(word):
