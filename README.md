@@ -21,7 +21,8 @@ choose a minimum word length of four characters. According to the output of
 
 ## Unique words
 
-At least the first four letters of each word must be unique.
+At least the first four letters of each word must be unique. According to
+analysis, the least ocurring first letter should occur minimally four times.
 
 ## Known words
 
